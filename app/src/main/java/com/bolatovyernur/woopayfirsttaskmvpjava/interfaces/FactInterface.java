@@ -3,14 +3,16 @@ package com.bolatovyernur.woopayfirsttaskmvpjava.interfaces;
 public interface FactInterface {
     interface FactModel{
         void getFact(FactPresenter presenter);
-        String getFacts();
+        void getTranslatedText(FactPresenter presenter);
     }
     interface FactPresenter{
         void networkCall();
-        String showFact();
-        void uiAutoUpdate();
+        void translateCall();
+        void uiAutoUpdate(String text);
+        void updateUiTranslatedText(String text);
     }
     interface FactView{
-        void updateViewData();
+        void updateViewData(String text);
+        void updateViewTranslatedText(String text);
     }
 }

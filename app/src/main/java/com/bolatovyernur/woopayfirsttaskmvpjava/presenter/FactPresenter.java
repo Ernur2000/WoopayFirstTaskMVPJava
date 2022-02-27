@@ -16,12 +16,17 @@ public class FactPresenter implements FactInterface.FactPresenter {
     }
 
     @Override
-    public String showFact() {
-        return model.getFacts();
+    public void translateCall() {
+        model.getTranslatedText(this);
     }
 
     @Override
-    public void uiAutoUpdate() {
-        view.updateViewData();
+    public void uiAutoUpdate(String text) {
+        view.updateViewData(text);
+    }
+
+    @Override
+    public void updateUiTranslatedText(String text) {
+        view.updateViewTranslatedText(text);
     }
 }
