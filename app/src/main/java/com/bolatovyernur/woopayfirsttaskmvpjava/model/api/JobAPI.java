@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class JobAPI{
     private static Retrofit retrofit;
+    private JobAPI() {}
     public static Retrofit getRetrofit(String baseUrl) {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
